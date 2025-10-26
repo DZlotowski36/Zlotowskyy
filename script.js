@@ -30,7 +30,7 @@ function draw() {
 
   // --- RYSOWANIE TŁA NOCY ---
   // Kolor ciemny granat – imituje niebo nocą
-  ctx.fillStyle = "#0a0320";
+  ctx.fillStyle = "#33025c";
   ctx.fillRect(0, 0, w, h); // wypełnienie całego ekranu prostokątem
 
   // --- RYSOWANIE GWIAZD ---
