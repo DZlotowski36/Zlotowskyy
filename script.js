@@ -70,10 +70,10 @@ function draw() {
       const x = w - offset; // rysowanie od prawej do lewej
 
       // Wysokość budynku – lekko losowa, zależy od warstwy
-      const buildingHeight = h / 3 + Math.sin(i + layer) * 40 + layer * 40;
+      const buildingHeight = h / 2 + Math.sin(i++ + layer) * 20 + layer * 10;
 
       // Rysujemy prostokąt (budynek)
-      ctx.fillRect(x, h - buildingHeight, 80, buildingHeight);
+      ctx.fillRect(x, h - buildingHeight, 30, buildingHeight);
     }
   }
 
