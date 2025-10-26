@@ -36,10 +36,10 @@ function draw() {
   // --- RYSOWANIE GWIAZD ---
   for (let i = 0; i < 150; i++) { // pętla rysująca 100 gwiazd
     // Pozycja X każdej gwiazdy: przesuwana sinusoidą, żeby wyglądało jak błyskanie
-    const x = (i * 123 + Math.sin(time * 0.01 + i) * 500) % w;
+    const x = (i * 123 + Math.sin(time * 0.04 + i) * 550) % w;
 
     // Pozycja Y zależy tylko od numeru gwiazdy (rozrzucone po ekranie)
-    const y = (i * 321) % h;
+    const y = (i++ * 321) % h;
 
     // Twinkle = migotanie (wartość między 0 i 1 zmieniająca przez czas)
     const twinkle = Math.sin(time * 0.05 + i) * 0.5 + 0.5;
@@ -53,9 +53,9 @@ function draw() {
 
   // --- RYSOWANIE WARSTW BUDYNKÓW (PARALLAX) ---
   // Parallax = różne warstwy przesuwające się z różną prędkością
-  for (let layer = 0; layer < 3; layer++) {
+  for (let layer = 0; layer < 8; layer++) {
     // Każda warstwa porusza się z inną prędkością
-    const speed = (layer + 1) * 0.3;
+    const speed = (layer + 1) * 0.4;
 
     // Kolor warstwy – im bliżej, tym jaśniejszy
     const color = ["#120a30", "#1a1040", "#261860"][layer];
@@ -66,7 +66,7 @@ function draw() {
     // Każda warstwa ma kilka "budynków"
     for (let i = 0; i < 10; i++) {
       // Przesunięcie w osi X – efekt przesuwania w prawo
-      const offset = (time * speed + i * 200) % w;
+      const offset = (time * speed + i * 220) % w;
       const x = w - offset; // rysowanie od prawej do lewej
 
       // Wysokość budynku – lekko losowa, zależy od warstwy
@@ -80,7 +80,7 @@ function draw() {
   // --- RYSOWANIE MGŁY NA DOLE ---
   // Tworzymy gradient od przezroczystego do czarnego
   const gradient = ctx.createLinearGradient(0, h * 0.7, 0, h);
-  gradient.addColorStop(0, "rgba(100,100,150,0.1)"); // górna część – lekko szara
+  gradient.addColorStop(0, "rgba(100,100,200,0.3)"); // górna część – lekko szara
   gradient.addColorStop(1, "rgba(0,0,0,0.8)");       // dolna część – ciemna, prawie czarna
 
   // Wypełniamy cały dół gradientem
