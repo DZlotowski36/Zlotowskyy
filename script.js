@@ -34,7 +34,7 @@ function draw() {
   ctx.fillRect(0, 0, w, h); // wypełnienie całego ekranu prostokątem
 
   // --- RYSOWANIE GWIAZD ---
-  for (let i = 0; i < 150; i++) { // pętla rysująca 100 gwiazd
+  for (let i = 1; i < 300; i++) { // pętla rysująca 100 gwiazd
     // Pozycja X każdej gwiazdy: przesuwana sinusoidą, żeby wyglądało jak błyskanie
     const x = (i * 123 + Math.sin(time * 0.04 + i) * 550) % w;
 
@@ -48,7 +48,7 @@ function draw() {
     ctx.fillStyle = `rgba(255,255,200,${twinkle})`;
 
     // Mały kwadrat 2x2 piksele jako gwiazda
-    ctx.fillRect(x, y, 4, 4);
+    ctx.fillRect(x, y, 6, 6);
   }
 
   // --- RYSOWANIE WARSTW BUDYNKÓW (PARALLAX) ---
